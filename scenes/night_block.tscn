@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfx45hs4a5nnv"]
+
+[ext_resource type="PackedScene" uid="uid://co5rknvtoj673" path="res://scenes/block.tscn" id="1_cetvl"]
+
+[node name="NightBlock" instance=ExtResource("1_cetvl")]
+modulate = Color(0.0666667, 0.298039, 0.352941, 1)
+phase = 1

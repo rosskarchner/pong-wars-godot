@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://co5rknvtoj673"]
+
+[ext_resource type="Script" path="res://scenes/block.gd" id="1_wxra7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e3kv"]
+size = Vector2(25, 25)
+
+[node name="Block" type="StaticBody2D" groups=["blocks"]]
+modulate = Color(0.85098, 0.909804, 0.890196, 1)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_wxra7")
+day_collision_layer = 4
+night_collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2e3kv")

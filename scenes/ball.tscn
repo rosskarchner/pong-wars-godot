@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://jc61wr4ybxvs"]
+
+[ext_resource type="Script" path="res://scenes/ball.gd" id="1_4uldi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7ljh"]
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyrwc"]
+radius = 15.0
+
+[node name="Ball" type="CharacterBody2D"]
+collision_mask = 20
+velocity = Vector2(-222.38, 768.471)
+script = ExtResource("1_4uldi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u7ljh")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+shape = SubResource("CircleShape2D_uyrwc")
+target_position = Vector2(0, 0)
+collision_mask = 4

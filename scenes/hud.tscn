@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cekjwqxxs86fi"]
+
+[ext_resource type="PackedScene" uid="uid://cv17gh2fl3icx" path="res://scenes/board.tscn" id="1_avq32"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_gjy51"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytb10"]
+bg_color = Color(0.0666667, 0.298039, 0.352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf5j2"]
+bg_color = Color(0.85098, 0.909804, 0.890196, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjy51")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(600, 600)
+render_target_update_mode = 4
+
+[node name="Board" parent="VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_avq32")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_ytb10")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jf5j2")
+max_value = 576.0
+value = 278.0
+show_percentage = false

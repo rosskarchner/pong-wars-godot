@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Pong Wars"
+run/main_scene="res://scenes/hud.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+CountManager="*res://scenes/count_manager.gd"
+
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=630
+
+[layer_names]
+
+2d_physics/layer_1="DAY_BALL"
+2d_physics/layer_2="NIGHT_BALL"
+2d_physics/layer_3="DAY_BLOCKS"
+2d_physics/layer_4="NIGHT_BLOCKS"
+2d_physics/layer_5="WALL"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

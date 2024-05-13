@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlhi8xjtrymv2"]
+
+[ext_resource type="PackedScene" uid="uid://co5rknvtoj673" path="res://scenes/block.tscn" id="1_urdp1"]
+
+[node name="DayBlock" instance=ExtResource("1_urdp1")]
+modulate = Color(0.85098, 0.909804, 0.890196, 1)
