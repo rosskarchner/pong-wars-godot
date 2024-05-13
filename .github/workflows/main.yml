@@ -4,7 +4,7 @@ on: push
 env:
   GODOT_VERSION: 4.2.2
   EXPORT_NAME: pong-wars-godot
-  PROJECT_PATH: pong-wars-godot 
+  PROJECT_PATH: . 
 
 jobs:
   export-web:
