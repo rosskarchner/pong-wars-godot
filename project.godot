@@ -23,6 +23,7 @@ CountManager="*res://scenes/count_manager.gd"
 
 window/size/viewport_width=600
 window/size/viewport_height=630
+window/stretch/mode="canvas_items"
 
 [layer_names]
 

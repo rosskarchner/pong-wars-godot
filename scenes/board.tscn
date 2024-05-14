@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv17gh2fl3icx"]
+[gd_scene load_steps=5 format=3 uid="uid://cv17gh2fl3icx"]
 
 [ext_resource type="PackedScene" uid="uid://jc61wr4ybxvs" path="res://scenes/ball.tscn" id="1_v83i5"]
-[ext_resource type="Script" path="res://scenes/board.gd" id="1_vvxhg"]
 [ext_resource type="TileSet" uid="uid://c17ln34lqo7hi" path="res://tiles.tres" id="2_qvgsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_61d77"]
@@ -11,7 +10,6 @@ size = Vector2(600, 50)
 size = Vector2(50, 600)
 
 [node name="Board" type="Node2D"]
-script = ExtResource("1_vvxhg")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 16
@@ -40,13 +38,13 @@ layer_0/tile_data = PackedInt32Array(14, 0, 65536, 15, 0, 65536, 16, 0, 65536, 1
 
 [node name="DayBall" parent="." instance=ExtResource("1_v83i5")]
 modulate = Color(0.85098, 0.909804, 0.890196, 1)
-position = Vector2(278, 313)
-velocity = Vector2(-603.367, 525.308)
+position = Vector2(270, 313)
+velocity = Vector2(-424.059, 678.361)
 
 [node name="NightBall" parent="." instance=ExtResource("1_v83i5")]
 modulate = Color(0.0666667, 0.298039, 0.352941, 1)
-position = Vector2(329, 313)
+position = Vector2(330, 313)
 collision_layer = 2
 collision_mask = 24
-velocity = Vector2(339.971, -724.169)
+velocity = Vector2(362.116, -713.352)
 phase = 1
