@@ -9,7 +9,6 @@ extends StaticBody2D
 @export_flags_2d_physics var day_collision_layer
 @export_flags_2d_physics var night_collision_layer
 
-
 @onready var rect = Rect2(Vector2(position.x-12.5, position.y-12.5), Vector2(25,25))
 
 func _ready():

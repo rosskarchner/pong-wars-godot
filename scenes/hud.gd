@@ -5,6 +5,5 @@ extends Control
 func _ready():
 	CountManager.score_changed.connect(update_scores)
 	
-func update_scores(day_score, night_score):
-	assert(day_score+night_score == 576)
+func update_scores(day_score):
 	bar.value = day_score

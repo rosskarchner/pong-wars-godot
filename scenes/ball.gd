@@ -1,12 +1,6 @@
 @tool
 extends CharacterBody2D
 
-
-# Huh? I attempted to reverse-engineer these speeds from the JS
-# version of Pong Wars, which manages the velocity directly, instead of
-# treating it as the product of speed and direction. The JS version moves some
-# number of pixels in x and y each *frame*, and does not take actual time into
-# account.
 var MIN_SPEED:=700
 var MAX_SPEED:=900
 var SPEED:=800
