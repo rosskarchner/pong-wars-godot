@@ -7,9 +7,9 @@ extends CharacterBody2D
 # treating it as the product of speed and direction. The JS version moves some
 # number of pixels in x and y each *frame*, and does not take actual time into
 # account.
-var MIN_SPEED:=600
-var MAX_SPEED:=800
-var SPEED:=700
+var MIN_SPEED:=700
+var MAX_SPEED:=900
+var SPEED:=800
 
 var DIRECTION:=Vector2.ZERO
 @onready var shapecast = $ShapeCast2D
