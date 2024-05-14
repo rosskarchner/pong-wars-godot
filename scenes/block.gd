@@ -35,7 +35,7 @@ func flip():
 
 
 func _input(event:InputEvent):
-	if event is InputEventMouseButton:
+	if not Engine.is_editor_hint() and event is InputEventMouseButton:
 		match event.button_mask:
 			MOUSE_BUTTON_MASK_RIGHT:
 				flip()

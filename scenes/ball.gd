@@ -21,16 +21,17 @@ var DIRECTION:=Vector2.ZERO
 
 
 func _ready():
-	if phase == Palette.Phase.DAY:
-		DIRECTION = Vector2.LEFT + Vector2.DOWN
-		shapecast.collision_mask = 4
-	else:
-		DIRECTION = Vector2.RIGHT + Vector2.UP
-		shapecast.collision_mask = 8
-	DIRECTION.x *= randf()
-	DIRECTION.y *= randf()
-	DIRECTION = DIRECTION.normalized()
-	velocity = DIRECTION * SPEED
+	if not Engine.is_editor_hint():
+		if phase == Palette.Phase.DAY:
+			DIRECTION = Vector2.LEFT + Vector2.DOWN
+			shapecast.collision_mask = 4
+		else:
+			DIRECTION = Vector2.RIGHT + Vector2.UP
+			shapecast.collision_mask = 8
+		DIRECTION.x *= randf()
+		DIRECTION.y *= randf()
+		DIRECTION = DIRECTION.normalized()
+		velocity = DIRECTION * SPEED
 
 func _draw():
 	draw_circle(Vector2.ZERO,12.5,Color.WHITE)
