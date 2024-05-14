@@ -49,6 +49,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_ytb10")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jf5j2")
-max_value = 576.0
+max_value = 556.0
 value = 278.0
 show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ProgressBar"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
