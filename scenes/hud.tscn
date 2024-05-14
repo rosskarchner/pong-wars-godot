@@ -1,13 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cekjwqxxs86fi"]
+[gd_scene load_steps=8 format=3 uid="uid://cekjwqxxs86fi"]
 
 [ext_resource type="PackedScene" uid="uid://cv17gh2fl3icx" path="res://scenes/board.tscn" id="1_avq32"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_gjy51"]
+[ext_resource type="FontFile" uid="uid://bi11acdv4cq0g" path="res://silkscreen-bold.tres" id="3_tun3p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytb10"]
 bg_color = Color(0.0666667, 0.298039, 0.352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf5j2"]
 bg_color = Color(0.85098, 0.909804, 0.890196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3mox"]
+font = ExtResource("3_tun3p")
+font_size = 18
+font_color = Color(0.0666667, 0.298039, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxuqy"]
+font = ExtResource("3_tun3p")
+font_size = 18
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -52,3 +62,30 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jf5j2")
 max_value = 556.0
 value = 278.0
 show_percentage = false
+
+[node name="ProgressLabels" type="Node2D" parent="VBoxContainer/HBoxContainer/ProgressBar"]
+unique_name_in_owner = true
+position = Vector2(300, 10)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ProgressBar/ProgressLabels"]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 15.0
+alignment = 1
+
+[node name="DayLabel" type="Label" parent="VBoxContainer/HBoxContainer/ProgressBar/ProgressLabels/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "278"
+label_settings = SubResource("LabelSettings_b3mox")
+
+[node name="Placeholder" type="Label" parent="VBoxContainer/HBoxContainer/ProgressBar/ProgressLabels/HBoxContainer"]
+layout_mode = 2
+text = "     "
+
+[node name="NightLabel" type="Label" parent="VBoxContainer/HBoxContainer/ProgressBar/ProgressLabels/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "278"
+label_settings = SubResource("LabelSettings_dxuqy")
