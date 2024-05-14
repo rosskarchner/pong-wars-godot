@@ -20,10 +20,13 @@ body {
 
 #canvas {
 	display: block;
+
+}
+
+#container{
 	max-width: 600px;
 	margin:auto;
 }
-
 #canvas:focus {
 	outline: none;
 }
@@ -81,6 +84,7 @@ body {
 		$GODOT_HEAD_INCLUDE
 	</head>
 	<body>
+		<div id="container">
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
 		</canvas>
@@ -94,7 +98,9 @@ body {
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
-
+		Based on <a href="https://pong-wars.koenvangilst.nl/">Pong Wars by Koen van Gilst</a>. 
+		<a href="https://github.com/rosskarchner/pong-wars-godot">Code on GitHub</a>.
+	</div>
 		<script src="$GODOT_URL"></script>
 		<script>
 const GODOT_CONFIG = $GODOT_CONFIG;
