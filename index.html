@@ -17,9 +17,21 @@ body {
 	overflow: hidden;
 	touch-action: none;
 }
+.copy {
+	max-width: 600px;
+    margin: auto;
 
+}
+
+a {
+	color:white;
+	font-weight: bold;
+}
 #canvas {
 	display: block;
+	max-width: 600px;
+	min-height:630px;
+    margin: auto;
 }
 
 #canvas:focus {
@@ -94,10 +106,11 @@ body {
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
-
+		<p class="copy">Based on <a href="https://pong-wars.koenvangilst.nl/" rel="nofollow">Pong Wars by Koen van Gilst</a>, 
+			source code <a href="https://github.com/rosskarchner/pong-wars-godot">on github</a>.</p>
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":885536,"index.wasm":42426310},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":1018208,"index.wasm":42426310},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
