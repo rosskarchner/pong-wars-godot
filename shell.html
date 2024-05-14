@@ -17,9 +17,21 @@ body {
 	overflow: hidden;
 	touch-action: none;
 }
+.copy {
+	max-width: 600px;
+    margin: auto;
 
+}
+
+a {
+	color:white;
+	font-weight: bold;
+}
 #canvas {
 	display: block;
+	max-width: 600px;
+	min-height:630px;
+    margin: auto;
 }
 
 #canvas:focus {
@@ -92,7 +104,8 @@ body {
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
-
+		<p class="copy">Based on <a href="https://pong-wars.koenvangilst.nl/" rel="nofollow">Pong Wars by Koen van Gilst</a>, 
+			source code <a href="https://github.com/rosskarchner/pong-wars-godot">on github</a>.</p>
 		<script src="$GODOT_URL"></script>
 		<script>
 const GODOT_CONFIG = $GODOT_CONFIG;
