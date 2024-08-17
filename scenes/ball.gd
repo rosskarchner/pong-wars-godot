@@ -1,11 +1,12 @@
 @tool
 extends CharacterBody2D
 
-var MIN_SPEED:=700
-var MAX_SPEED:=900
-var SPEED:=800
+const MIN_SPEED:=700
+const MAX_SPEED:=900
 
+var SPEED:=randi_range(MIN_SPEED + 50,MAX_SPEED-50)
 var DIRECTION:=Vector2.ZERO
+
 @onready var shapecast = $ShapeCast2D
 
 @export var phase: Palette.Phase:
@@ -52,11 +53,9 @@ func _physics_process(delta):
 			SPEED = clamp(SPEED + (randf() *20) -10, MIN_SPEED,MAX_SPEED)
 			velocity = DIRECTION * SPEED
 			
-			
 			shapecast.force_shapecast_update()
 			if shapecast.is_colliding():
 				for i in range(shapecast.get_collision_count()):
-
 					var collider = shapecast.get_collider(i)
 					if collider.is_in_group("blocks"):
 						collider.flip()
