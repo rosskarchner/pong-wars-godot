@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cekjwqxxs86fi"]
 
 [ext_resource type="PackedScene" uid="uid://cv17gh2fl3icx" path="res://scenes/board.tscn" id="1_avq32"]
-[ext_resource type="Script" path="res://scenes/hud.gd" id="1_gjy51"]
+[ext_resource type="Script" uid="uid://cjngxwyvvdvg7" path="res://scenes/hud.gd" id="1_gjy51"]
 [ext_resource type="FontFile" uid="uid://bi11acdv4cq0g" path="res://silkscreen-bold.tres" id="3_tun3p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytb10"]
