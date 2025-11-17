@@ -11,7 +11,7 @@ var DIRECTION:=Vector2.ZERO
 
 @export var phase: Palette.Phase:
 	set(newPhase):
-		modulate = Palette.BALL_COLOR_LOOKUP[newPhase]
+		modulate = Palette.BLOCK_COLOR_LOOKUP[newPhase]
 		phase = newPhase
 
 
