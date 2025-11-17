@@ -9,8 +9,6 @@ extends StaticBody2D
 @export_flags_2d_physics var day_collision_layer
 @export_flags_2d_physics var night_collision_layer
 
-@onready var rect = Rect2(Vector2(position.x-12.5, position.y-12.5), Vector2(25,25))
-
 func _ready():
 	update_phase()
 	
@@ -34,11 +32,13 @@ func flip():
 
 
 func _input(event:InputEvent):
-	if not Engine.is_editor_hint() and event is InputEventMouseButton:
-		match event.button_mask:
-			MOUSE_BUTTON_MASK_RIGHT:
-				flip()
-			MOUSE_BUTTON_MASK_LEFT:
-				if rect.has_point(event.position):
-					flip()
-					get_viewport().set_input_as_handled()
+	if not Engine.is_editor_hint() and event is InputEventMouseButton and event.pressed:
+		# Create a rect in global coordinates centered on this block's position
+		var global_rect = Rect2(global_position - Vector2(12.5, 12.5), Vector2(25, 25))
+
+		if event.button_index == MOUSE_BUTTON_LEFT and global_rect.has_point(event.position):
+			flip()
+			get_viewport().set_input_as_handled()
+		elif event.button_index == MOUSE_BUTTON_RIGHT and global_rect.has_point(event.position):
+			flip()
+			get_viewport().set_input_as_handled()
