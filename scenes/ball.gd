@@ -11,7 +11,7 @@ var DIRECTION:=Vector2.ZERO
 
 @export var phase: Palette.Phase:
 	set(newPhase):
-		modulate = Palette.BLOCK_COLOR_LOOKUP[newPhase]
+		modulate = Palette.BALL_COLOR_LOOKUP[newPhase]
 		phase = newPhase
 
 
@@ -23,8 +23,9 @@ func _ready():
 		else:
 			DIRECTION = Vector2.RIGHT + Vector2.UP
 			shapecast.collision_mask = 8
-		DIRECTION.x *= randf()
-		DIRECTION.y *= randf()
+		# Add randomness while maintaining a reasonable angle (0.5 to 1.0 range)
+		DIRECTION.x *= randf_range(0.5, 1.0)
+		DIRECTION.y *= randf_range(0.5, 1.0)
 		DIRECTION = DIRECTION.normalized()
 		velocity = DIRECTION * SPEED
 
@@ -46,8 +47,8 @@ func _physics_process(delta):
 				DIRECTION.y += (.1 if DIRECTION.y > 0 else -.1)
 			else:
 				# just add a little randomness to direction
-				DIRECTION.x -=[-0.1, 0.1].pick_random() * randf()
-				DIRECTION.y -=[-0.1, 0.1].pick_random() * randf()
+				DIRECTION.x += [-0.1, 0.1].pick_random() * randf()
+				DIRECTION.y += [-0.1, 0.1].pick_random() * randf()
 				
 			# add a little randomness to speed
 			SPEED = clamp(SPEED + (randf() *20) -10, MIN_SPEED,MAX_SPEED)
